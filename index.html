@@ -22,207 +22,153 @@
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="512">
   <meta itemprop="image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
-</head>
-<body>
 
+  <style>
+    /* إعدادات الصفحة الأساسية والخلفية الكاملة */
+    body {
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-image: url('indexx/Back004.jpg'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
 
+    /* رأس الموقع - شفاف مع توزيع العناصر */
+    .main-header {
+        background-color: rgba(0, 150, 136, 0.7);
+        width: 100%;
+        height: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 
+    .header-container {
+        width: 90%;
+        max-width: 1200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
 
+    .center-header-img {
+        height: 70px;
+        width: auto;
+        object-fit: contain;
+    }
 
+    /* ذيل الموقع الرئيسي */
+    .site-footer {
+        background-color: rgba(0, 150, 136, 0.85); 
+        color: #ffffff;
+        padding: 30px 0;
+        width: 100%;
+    }
 
+    .footer-container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
 
+    .footer-section {
+        flex: 1;
+        min-width: 250px;
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-    
-    
-    
-    <style>
-        /* إعدادات الصفحة الأساسية والخلفية الكاملة */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('indexx/Back004.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+    .footer-right { align-items: flex-start; text-align: right; }
+    .footer-left { align-items: flex-end; text-align: left; }
 
-        /* رأس الموقع - شفاف مع توزيع العناصر */
-        .main-header {
-            background-color: rgba(0, 150, 136, 0.7);
-            width: 100%;
-            height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+    /* التحكم بالصور لضمان إجبار المتصفح على عرضها */
+    .efa-logo {
+        object-fit: contain;
+        display: inline-block !important;
+    }
 
-        .header-container {
-            width: 90%;
-            max-width: 1200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
+    .partner-logos {
+        display: flex;
+        gap: 20px;
+    }
 
-        .center-header-img {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-        }
+    .partner-logo {
+        object-fit: contain !important;
+        display: inline-block !important;
+    }
 
+    .footer-center h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.1rem;
+    }
 
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 15px 0;
+        display: flex;
+        gap: 15px;
+    }
 
+    .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
 
+    .payment-methods {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+    }
 
+    .payment-logo {
+        height: 25px;
+        width: auto;
+        object-fit: contain;
+    }
 
+    /* الخط المتقطع للجوال */
+    .dashed-linee {
+        display: none;
+        width: 100%;
+        border-top: 1px dashed rgba(255, 255, 255, 0.4);
+        margin: 15px 0;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /* ذيل الموقع الرئيسي */
-        .site-footer {
-            background-color: rgba(0, 150, 136, 0.85); 
-            color: #ffffff;
-            padding: 30px 0;
-            width: 100%;
-        }
-
+    /* شاشات الجوال */
+    @media (max-width: 768px) {
         .footer-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin: 10px 0;
-            display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
         }
-
-        .footer-right { align-items: flex-start; text-align: right; }
-        .footer-left { align-items: flex-end; text-align: left; }
-
-        /* التحكم بالصور لضمان إجبار المتصفح على عرضها */
-        .efa-logo {
-            object-fit: contain;
-            display: inline-block !important;
+        .footer-section {
+            align-items: center !important;
+            text-align: center !important;
         }
-
-        .partner-logos {
-            display: flex;
-            gap: 20px;
-        }
-
-        .partner-logo {
-            object-fit: contain !important;
-            display: inline-block !important;
-        }
-
-        .footer-center h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 15px 0;
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .payment-methods {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .payment-logo {
-            height: 25px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* الخط المتقطع للجوال */
         .dashed-linee {
-            display: none;
-            width: 100%;
-            border-top: 1px dashed rgba(255, 255, 255, 0.4);
-            margin: 15px 0;
+            display: block;
         }
-
-        /* شاشات الجوال */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column;
-            }
-            .footer-section {
-                align-items: center !important;
-                text-align: center !important;
-            }
-            .dashed-linee {
-                display: block;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 8px;
-            }
+        .footer-links {
+            flex-direction: column;
+            gap: 8px;
         }
-    </style>
-    
-    
-
-    
-    
+    }
+  </style>
 </head>
 <body>
 
@@ -233,8 +179,6 @@
         </div>
     </header>
 
-
-    
     <!-- ذيل الموقع -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -277,49 +221,6 @@
 
         </div>
     </footer>
-
-    
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 
 </body>
 </html>
