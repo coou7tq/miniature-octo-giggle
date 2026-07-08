@@ -13,15 +13,15 @@
   <meta property="og:type" content="website">
   
   <!-- رابط موقعك الرئيسي الصحيح -->
-  <meta property="og:url" content="https://coou7tq.github.io/miniature-octo-giggle/">
+  <meta property="og:url" content="https://github.io">
   
   <!-- رابط الصورة الصحيح والكامل داخل مجلد indexx -->
-  <meta property="og:image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
-  <meta property="og:image:secure_url" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
+  <meta property="og:image" content="https://github.ioindexx/PM.jpeg">
+  <meta property="og:image:secure_url" content="https://github.ioindexx/PM.jpeg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="512">
-  <meta itemprop="image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
+  <meta itemprop="image" content="https://github.ioindexx/PM.jpeg">
 
   <style>
     /* إعدادات الصفحة الأساسية والخلفية الكاملة */
@@ -65,12 +65,20 @@
         object-fit: contain;
     }
 
+    /* حاوية المحتوى الوسطي لدفعه لأسفل */
+    .main-content {
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+    }
+
     /* ذيل الموقع الرئيسي */
     .site-footer {
         background-color: rgba(0, 150, 136, 0.85); 
         color: #ffffff;
         padding: 30px 0;
         width: 100%;
+        margin-top: auto; /* يضمن التصاق الفوتر بالأسفل دائماً */
     }
 
     .footer-container {
@@ -178,6 +186,11 @@
             <img src="indexx/EFAAW.svg" alt="صورة وسط الرأس" class="center-header-img" width="150" height="70">
         </div>
     </header>
+
+    <!-- منطقة المحتوى الرئيسي (يمكنك وضع محتوى صفحتك هنا مستقبلاً) -->
+    <main class="main-content">
+        <!-- ضع هنا أزرار تسجيل الدخول، الحقول، أو الجداول -->
+    </main>
 
     <!-- ذيل الموقع -->
     <footer class="site-footer">
