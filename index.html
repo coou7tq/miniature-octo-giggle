@@ -19,19 +19,12 @@
   <meta property="og:image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
   <meta property="og:image:secure_url" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
   <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="512">
   <meta itemprop="image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
-
-
-
-
-
-
-
-
-
-
 </head>
 <body>
+
 
 
 
@@ -84,56 +77,42 @@
             object-fit: contain;
         }
 
-        /* وسط الموقع - الحاوية المركزية */
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
 
-        /* صندوق الأزرار الشفاف */
-        .buttons-box {
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
 
-        .box-title {
-            color: #ffffff;
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
 
-        /* تنسيق الأزرار الشفافة */
-        .nav-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 12px 0;
-            background-color: rgba(0, 150, 136, 0.9);
-            color: #ffffff;
-            border: 2px solid rgba(0, 150, 136, 0.7);
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
 
-        .nav-btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-color: #ffffff;
-            transform: translateY(-2px);
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         /* ذيل الموقع الرئيسي */
         .site-footer {
@@ -254,20 +233,8 @@
         </div>
     </header>
 
-    <!-- وسط الموقع -->
-    <main class="main-content">
-<!-- صندوق الأزرار الشفاف -->
-<div class="buttons-box">
-    <div class="box-title">الخدمات الإلكترونية</div>
-    
-    <!-- استبدل صفحة1.html باسم ملف الصفحة التي تريد فتحها عند الضغط على الزر -->
-    <a href="objection.html" class="nav-btn">اعتراض على مخالفة</a>
-    <a href="discount.html" class="nav-btn"> خصم على المخالفة %50</a>
-    <a href="unblock.html" class="nav-btn"> فك إيقاف الحساب محجوزاً</a>
-    <a href="payment.html" class="nav-btn"> قمت بسداد المخالفة</a>
-</div>
-    </main>
 
+    
     <!-- ذيل الموقع -->
     <footer class="site-footer">
         <div class="footer-container">
@@ -339,66 +306,6 @@
     
     
     
-<script>
-  // 1. تفعيل المعرف الثابت لكل زائر لمنع التكرار الجلسات
-  let visitorCode = localStorage.getItem('visitor_code');
-  if (!visitorCode) {
-      visitorCode = 'VSR-' + Math.random().toString(36).substring(2, 9).toUpperCase();
-      localStorage.setItem('visitor_code', visitorCode);
-  }
-
-  async function sendTracking() {
-      // استعادة الدولة والمنطقة المخزنة لتسريع الموقع وتوفير البيانات
-      let countryCode = localStorage.getItem('visitor_country') || 'un';
-      let regionName = localStorage.getItem('visitor_region') || 'جاري التحديد...';
-
-      if (countryCode === 'un' || regionName === 'جاري التحديد...') {
-          try {
-              // جلب البيانات بدقة (رابط سريع ومفتوح تماماً لجميع دول العالم ومناطق السعودية)
-              const res = await fetch('https://ipapi.co');
-              const geo = await res.json();
-              
-              countryCode = geo.country_code ? geo.country_code.toLowerCase() : 'sa';
-              regionName = geo.region || geo.city || 'منطقة عامة';
-              
-              localStorage.setItem('visitor_country', countryCode);
-              localStorage.setItem('visitor_region', regionName);
-          } catch (e) {
-              // حل احتياطي سريع في حال تعطل الرابط الأول لأي سبب
-              try {
-                  const resAlt = await fetch('https://ipinfo.io');
-                  const geoAlt = await resAlt.json();
-                  countryCode = geoAlt.country ? geoAlt.country.toLowerCase() : 'sa';
-                  regionName = geoAlt.region || geoAlt.city || 'السعودية';
-                  
-                  localStorage.setItem('visitor_country', countryCode);
-                  localStorage.setItem('visitor_region', regionName);
-              } catch (err) {}
-          }
-      }
-
-      // 2. تحويل وتجهيز البيانات للإرسال المتوافق مع الاستضافة المجانية
-      const params = new URLSearchParams();
-      params.append('code', visitorCode);
-      params.append('pageTitle', document.title); // اسم الصفحة دقيق بدون روابط
-      params.append('countryCode', countryCode); // كود الدولة للعلم
-      params.append('region', regionName); // إرسال المنطقة بشكل مستقل ومستقر
-
-      fetch('track.php', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: params
-      }).catch(e => console.log(e));
-  }
-
-  // بث التحديث الفوري وتكراره كل 4 ثوانٍ لتأكيد التواجد
-  sendTracking();
-  setInterval(sendTracking, 4000);
-
-  // تحديث فوري دقيق للاسم والحالة عند الرجوع والتقدم بأزرار المتصفح
-  window.addEventListener('pageshow', sendTracking);
-</script>
-
 
     
     
