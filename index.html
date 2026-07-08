@@ -1,113 +1,145 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>رأس موقع بخلفية شفافة وصورة في الوسط</title>
-    
-    <style>
-        /* تصنيفات عامة وتجهيز خلفية الصفحة لرؤية الشفافية */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>موقع</title>
+  <link rel="icon" type="image/png" href="indexx/favicon.ico">
 
-        body {
-            /* وضعنا خلفية ملونة أو صورة هنا لتلاحظ أن الرأس شفاف تماماً ويظهر ما تحته */
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            min-height: 100vh;
-        }
+  <meta name="description" content="المنصة ">
 
-        /* تنسيق الرأس الشفاف */
-        .transparent-header {
-            position: fixed; /* يجعله طافياً أعلى الصفحة */
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.05); /* خلفية شفافة جداً */
-            backdrop-filter: blur(10px); /* تأثير زجاجي ضبابي عصري */
-            -webkit-backdrop-filter: blur(10px);
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between; /* توزيع العناصر بالتساوي */
-            align-items: center; /* محاذاة عمودية في المنتصف */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* خط سفلي ناعم */
-            z-index: 1000;
-        }
+  <!-- إعدادات المعاينة الصحيحة لتطبيق واتساب وفيسبوك -->
+  <meta property="og:title" content="إيفاء">
+  <meta property="og:description" content="المنصة .">
+  <meta property="og:type" content="website">
+  
+  <!-- رابط موقعك الرئيسي الصحيح -->
+  <meta property="og:url" content="https://coou7tq.github.io/miniature-octo-giggle/">
+  
+  <!-- رابط الصورة الصحيح والكامل داخل مجلد indexx -->
+  <meta property="og:image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
+  <meta property="og:image:secure_url" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1024">
+  <meta property="og:image:height" content="512">
+  <meta itemprop="image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
 
-        /* القوائم الجانبية (يمين ويسار الشعار) */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+  <style>
+    /* تنسيقات عامة للموقع */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-        .nav-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: color 0.3s, transform 0.2s;
-        }
+    body {
+        /* وضعنا خلفية داكنة لتظهر شفافية الرأس، يمكنك تغييرها لاحقاً */
+        background: #11141a; 
+        color: #ffffff;
+        min-height: 100vh;
+    }
 
-        .nav-links a:hover {
-            color: #00d2ff; /* يتغير اللون عند تمرير الماوس */
-        }
+    /* تنسيق الرأس الشفاف */
+    .site-header {
+        position: fixed; /* يجعله طافياً أعلى الصفحة */
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.03); /* خلفية شفافة جداً */
+        backdrop-filter: blur(12px); /* تأثير ضبابي زجاجي عصري */
+        -webkit-backdrop-filter: blur(12px);
+        padding: 15px 40px;
+        display: flex;
+        justify-content: space-between; /* توزيع الأزرار يميناً ويساراً */
+        align-items: center; /* محاذاة عمودية في المنتصف */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* خط سفلي ناعم */
+        z-index: 1000;
+    }
 
-        /* حاوية الصورة في الوسط تماماً */
-        .logo-container {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%); /* يضمن توسيط الصورة بدقة 100% */
-        }
+    /* القوائم الجانبية (يمين ويسار الشعار) */
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
 
-        .logo-image {
-            height: 60px; /* يمكنك التحكم في حجم الصورة من هنا */
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
+    .nav-links a {
+        color: #e0e0e0;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
 
-        /* مساحة تجريبية فقط لتعويض مكان الرأس المثبت */
-        .hero-section {
-            padding-top: 150px;
-            text-align: center;
-            color: white;
-        }
-    </style>
+    .nav-links a:hover {
+        color: #00d2ff; /* يتغير اللون عند تمرير الماوس */
+    }
+
+    /* حاوية الصورة المتمركزة في الوسط تماماً */
+    .logo-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%); /* يضمن التوسيط الهندسي الدقيق للشعار */
+    }
+
+    .logo-image {
+        height: 55px; /* يمكنك التحكم في ارتفاع الشعار من هنا */
+        width: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    /* مساحة تجريبية أسفل الرأس حتى لا يغطي على المحتوى */
+    .main-content {
+        padding-top: 140px;
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .main-content h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .main-content p {
+        color: #a0aec0;
+        line-height: 1.7;
+    }
+  </style>
 </head>
 <body>
 
-    <!-- رأس الموقع الشفاف -->
-    <header class="transparent-header">
-        
-        <!-- القائمة اليمنى -->
-        <ul class="nav-links">
-            <li><a href="#">الرئيسية</a></li>
-            <li><a href="#">خدماتنا</a></li>
-        </ul>
+  <!-- رأس الموقع الشفاف -->
+  <header class="site-header">
+      
+      <!-- القائمة اليمنى -->
+      <ul class="nav-links">
+          <li><a href="#">الرئيسية</a></li>
+          <li><a href="#">الخدمات</a></li>
+      </ul>
 
-        <!-- الصورة في المنتصف تماماً -->
-        <div class="logo-container">
-            <!-- استبدل رابط الصورة برابط لوجو موقعك الخاص -->
-            <img src="https://placeholder.com" alt="شعار الموقع" class="logo-image">
-        </div>
+      <!-- الصورة في المنتصف تماماً (تم توجيهها لمجلد ومسار موقعك) -->
+      <div class="logo-container">
+          <img src="indexx/PM.jpeg" alt="شعار إيفاء" class="logo-image">
+      </div>
 
-        <!-- القائمة اليسرى -->
-        <ul class="nav-links">
-            <li><a href="#">من نحن</a></li>
-            <li><a href="#">اتصل بنا</a></li>
-        </ul>
+      <!-- القائمة اليسرى -->
+      <ul class="nav-links">
+          <li><a href="#">من نحن</a></li>
+          <li><a href="#">اتصل بنا</a></li>
+      </ul>
 
-    </header>
+  </header>
 
-    <!-- محتوى تجريبي خلف الرأس الشفاف -->
-    <section class="hero-section">
-        <h1>أهلاً بك في موقعنا</h1>
-        <p>لاحظ كيف يظهر محتوى الصفحة والخلفية من تحت رأس الموقع الشفاف.</p>
-    </section>
+  <!-- وسط الصفحة (المحتوى الرئيسي) -->
+  <main class="main-content">
+      <h2>مرحباً بك في منصة إيفاء</h2>
+      <p>هذا النص يمثل منطقة الوسط المخصصة لعرض محتوى المنصة الرئيسي. يمكنك وضع النصوص، الصور، أو النماذج هنا.</p>
+  </main>
 
 </body>
 </html>
