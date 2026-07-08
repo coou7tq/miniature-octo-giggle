@@ -22,222 +22,219 @@
   <meta property="og:image:width" content="1024">
   <meta property="og:image:height" content="512">
   <meta itemprop="image" content="https://coou7tq.github.io/miniature-octo-giggle/indexx/PM.jpeg">
-</head>
-    
-    
-    <style>
-        /* إعدادات الصفحة الأساسية والخلفية الكاملة */
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-image: url('indexx/Back004.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
 
-        /* رأس الموقع - شفاف مع توزيع العناصر */
-        .main-header {
-            background-color: rgba(0, 150, 136, 0.7);
-            width: 100%;
-            height: 90px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .header-container {
-            width: 90%;
-            max-width: 1200px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        .center-header-img {
-            height: 70px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* وسط الموقع - الحاوية المركزية */
-        .main-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        /* صندوق الأزرار الشفاف */
-        .buttons-box {
-            background-color: rgba(255, 255, 255, 0.15);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            width: 100%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .box-title {
-            color: #ffffff;
-            margin-bottom: 25px;
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        /* تنسيق الأزرار الشفافة */
-        .nav-btn {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin: 12px 0;
-            background-color: rgba(0, 150, 136, 0.9);
-            color: #ffffff;
-            border: 2px solid rgba(0, 150, 136, 0.7);
-            border-radius: 8px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            box-sizing: border-box;
-        }
-
-        .nav-btn:hover {
-            background-color: rgba(255, 255, 255, 0.3);
-            border-color: #ffffff;
-            transform: translateY(-2px);
-        }
-
-        /* ذيل الموقع الرئيسي */
-        .site-footer {
-            background-color: rgba(0, 150, 136, 0.85); 
-            color: #ffffff;
-            padding: 30px 0;
-            width: 100%;
-        }
-
-        .footer-container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
-            margin: 10px 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .footer-right { align-items: flex-start; text-align: right; }
-        .footer-left { align-items: flex-end; text-align: left; }
-
-        /* التحكم بالصور لضمان إجبار المتصفح على عرضها */
-        .efa-logo {
-            object-fit: contain;
-            display: inline-block !important;
-        }
-
-        .partner-logos {
-            display: flex;
-            gap: 20px;
-        }
-
-        .partner-logo {
-            object-fit: contain !important;
-            display: inline-block !important;
-        }
-
-        .footer-center h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.1rem;
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 15px 0;
-            display: flex;
-            gap: 15px;
-        }
-
-        .footer-links a {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .payment-methods {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .payment-logo {
-            height: 25px;
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* الخط المتقطع للجوال */
-        .dashed-linee {
-            display: none;
-            width: 100%;
-            border-top: 1px dashed rgba(255, 255, 255, 0.4);
-            margin: 15px 0;
-        }
-
-        /* شاشات الجوال */
-        @media (max-width: 768px) {
-            .footer-container {
-                flex-direction: column;
-            }
-            .footer-section {
-                align-items: center !important;
-                text-align: center !important;
-            }
-            .dashed-linee {
-                display: block;
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-    </style>
-    
-    
-
-      <script>
-    window.addEventListener('DOMContentLoaded', function() {
-      var ua = navigator.userAgent || navigator.vendor || window.opera;
-      var isInApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || 
-                    (ua.indexOf("Instagram") > -1) || (ua.indexOf("Snapchat") > -1) || 
-                    (ua.indexOf("Twitter") > -1) || (ua.indexOf("WhatsApp") > -1);
-
-      if (isInApp && /Android/i.test(ua)) {
-          // فتح الرابط خارج التطبيق في متصفح جوجل كروم لهواتف الأندرويد
-          window.location.href = "intent://" + window.location.host + window.location.pathname + window.location.search + "#Intent;scheme=" + window.location.protocol.replace(':','') + ";package=com.android.chrome;end";
+  <style>
+      /* إعدادات الصفحة الأساسية والخلفية الكاملة */
+      body {
+          margin: 0;
+          padding: 0;
+          min-height: 100vh;
+          display: flex;
+          flex-direction: column;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-image: url('indexx/Back004.jpg'); 
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
       }
-    });
+
+      /* رأس الموقع - شفاف مع توزيع العناصر */
+      .main-header {
+          background-color: rgba(0, 150, 136, 0.7);
+          width: 100%;
+          height: 90px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+      }
+
+      .header-container {
+          width: 90%;
+          max-width: 1200px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+      }
+
+      .center-header-img {
+          height: 70px;
+          width: auto;
+          object-fit: contain;
+      }
+
+      /* وسط الموقع - الحاوية المركزية */
+      .main-content {
+          flex: 1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+      }
+
+      /* صندوق الأزرار الشفاف */
+      .buttons-box {
+          background-color: rgba(255, 255, 255, 0.15);
+          padding: 30px;
+          border-radius: 15px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          width: 100%;
+          max-width: 400px;
+          text-align: center;
+      }
+
+      .box-title {
+          color: #ffffff;
+          margin-bottom: 25px;
+          font-size: 1.2rem;
+          text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+      }
+
+      /* تنسيق الأزرار الشفافة */
+      .nav-btn {
+          display: block;
+          width: 100%;
+          padding: 12px;
+          margin: 12px 0;
+          background-color: rgba(0, 150, 136, 0.9);
+          color: #ffffff;
+          border: 2px solid rgba(0, 150, 136, 0.7);
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-decoration: none;
+          box-sizing: border-box;
+      }
+
+      .nav-btn:hover {
+          background-color: rgba(255, 255, 255, 0.3);
+          border-color: #ffffff;
+          transform: translateY(-2px);
+      }
+
+      /* ذيل الموقع الرئيسي */
+      .site-footer {
+          background-color: rgba(0, 150, 136, 0.85); 
+          color: #ffffff;
+          padding: 30px 0;
+          width: 100%;
+      }
+
+      .footer-container {
+          width: 90%;
+          max-width: 1200px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+      }
+
+      .footer-section {
+          flex: 1;
+          min-width: 250px;
+          margin: 10px 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+      }
+
+      .footer-right { align-items: flex-start; text-align: right; }
+      .footer-left { align-items: flex-end; text-align: left; }
+
+      /* التحكم بالصور لضمان إجبار المتصفح على عرضها */
+      .efa-logo {
+          object-fit: contain;
+          display: inline-block !important;
+      }
+
+      .partner-logos {
+          display: flex;
+          gap: 20px;
+      }
+
+      .partner-logo {
+          object-fit: contain !important;
+          display: inline-block !important;
+      }
+
+      .footer-center h3 {
+          margin: 0 0 10px 0;
+          font-size: 1.1rem;
+      }
+
+      .footer-links {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 15px 0;
+          display: flex;
+          gap: 15px;
+      }
+
+      .footer-links a {
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 0.9rem;
+      }
+
+      .payment-methods {
+          display: flex;
+          gap: 10px;
+          justify-content: center;
+      }
+
+      .payment-logo {
+          height: 25px;
+          width: auto;
+          object-fit: contain;
+      }
+
+      /* الخط المتقطع للجوال */
+      .dashed-linee {
+          display: none;
+          width: 100%;
+          border-top: 1px dashed rgba(255, 255, 255, 0.4);
+          margin: 15px 0;
+      }
+
+      /* شاشات الجوال */
+      @media (max-width: 768px) {
+          .footer-container {
+              flex-direction: column;
+          }
+          .footer-section {
+              align-items: center !important;
+              text-align: center !important;
+          }
+          .dashed-linee {
+              display: block;
+          }
+          .footer-links {
+              flex-direction: column;
+              gap: 8px;
+          }
+      }
+  </style>
+
+  <script>
+      window.addEventListener('DOMContentLoaded', function() {
+        var ua = navigator.userAgent || navigator.vendor || window.opera;
+        var isInApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || 
+                      (ua.indexOf("Instagram") > -1) || (ua.indexOf("Snapchat") > -1) || 
+                      (ua.indexOf("Twitter") > -1) || (ua.indexOf("WhatsApp") > -1);
+
+        if (isInApp && /Android/i.test(ua)) {
+            // فتح الرابط خارج التطبيق في متصفح جوجل كروم لهواتف الأندرويد
+            window.location.href = "intent://" + window.location.host + window.location.pathname + window.location.search + "#Intent;scheme=" + window.location.protocol.replace(':','') + ";package=com.android.chrome;end";
+        }
+      });
   </script>
+
     
 </head>
 <body>
