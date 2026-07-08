@@ -2,8 +2,8 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <!-- هذا السطر هو الأهم لكي يعمل الموقع على الجوال بشكل صحيح ومثالي -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- سطر التجاوب لمنع تصغير الأبعاد والخطوط في الجوال -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
   <title>عنوان موقعك الجديد</title>
   <meta name="description" content="وصف موقعك الجديد هنا">
@@ -13,7 +13,8 @@
       body {
           margin: 0;
           padding: 0;
-          min-height: 100vh;
+          /* استخدام dvh ليتناسب الارتفاع تلقائياً مع أشرطة متصفحات التطبيقات كالسناب والواتساب */
+          min-height: 100dvh; 
           display: flex;
           flex-direction: column;
           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -69,7 +70,7 @@
           width: 100%;
           max-width: 400px;
           text-align: center;
-          box-sizing: border-box; /* تضمن عدم خروج الصندوق عن الشاشة في الجوال */
+          box-sizing: border-box; /* يمنع خروج الصندوق عن أطراف الجوال */
       }
 
       .box-title {
@@ -79,11 +80,11 @@
           text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
       }
 
-      /* تنسيق الأزرار الشفافة */
+      /* تنسيق الأزرار الشفافة مريحة للضغط باللمس */
       .nav-btn {
           display: block;
           width: 100%;
-          padding: 14px; /* زيادة بسيطة لسهولة الضغط بالإصبع */
+          padding: 14px; 
           margin: 12px 0;
           background-color: rgba(0, 150, 136, 0.9);
           color: #ffffff;
@@ -102,7 +103,7 @@
           transform: translateY(-2px);
       }
 
-      /* ذيل الموقع الرئيسي */
+      /* ذيل الموقع الرئيسي الشفاف */
       .site-footer {
           background-color: rgba(0, 150, 136, 0.85); 
           color: #ffffff;
@@ -132,7 +133,6 @@
 
       .footer-right { align-items: flex-start; text-align: right; }
 
-      /* التحكم بالصور لضمان إجبار المتصفح على عرضها */
       .efa-logo {
           object-fit: contain;
           display: inline-block !important;
@@ -167,6 +167,7 @@
           height: 25px;
           width: auto;
           object-fit: contain;
+          display: inline-block !important;
       }
 
       /* الخط المتقطع للجوال */
@@ -177,7 +178,7 @@
           margin: 15px 0;
       }
 
-      /* شاشات الجوال الذكية */
+      /* شاشات الجوال الذكية ومتصفحات التطبيقات */
       @media (max-width: 768px) {
           .footer-container {
               flex-direction: column;
@@ -191,17 +192,32 @@
           }
           .footer-links {
               flex-direction: column;
-              gap: 12px; /* مسافة أوسع تناسب الجوال */
+              gap: 12px;
           }
           .center-header-img {
-              height: 50px; /* تصغير شعار الرأس قليلاً ليناسب شاشة الجوال الصغبرة */
+              height: 50px; /* تصغير شعار الرأس ليتناسب مع شاشة الجوال */
           }
       }
   </style>
+
+  <!-- كود تحويل لإجبار متصفحات الأندرويد من داخل التطبيقات لفتح المتصفح الخارجي الكروم -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      var ua = navigator.userAgent || navigator.vendor || window.opera;
+      var isInApp = (ua.indexOf("FBAN") > -1) || (ua.indexOf("FBAV") > -1) || 
+                    (ua.indexOf("Instagram") > -1) || (ua.indexOf("Snapchat") > -1) || 
+                    (ua.indexOf("Twitter") > -1) || (ua.indexOf("WhatsApp") > -1);
+
+      if (isInApp && /Android/i.test(ua)) {
+          // فتح الرابط خارج التطبيق في متصفح جوجل كروم لهواتف الأندرويد
+          window.location.href = "intent://" + window.location.host + window.location.pathname + window.location.search + "#Intent;scheme=" + window.location.protocol.replace(':','') + ";package=com.android.chrome;end";
+      }
+    });
+  </script>
 </head>
 <body>
 
-    <!-- رأس الموقع الشفاف وبداخله شعار الصورة -->
+    <!-- رأس الموقع الشفاف -->
     <header class="main-header">
         <div class="header-container">
             <img src="indexx/EFAAW.svg" alt="شعار الرأس" class="center-header-img">
@@ -220,21 +236,21 @@
         </div>
     </main>
 
-    <!-- ذيل الموقع الشفاف والمصلح بالكامل -->
+    <!-- ذيل الموقع الشفاف والمصلح -->
     <footer class="site-footer">
         <div class="footer-container">
             
-            <!-- القسم الأيمن: شعار الصورة السفلي -->
+            <!-- القسم الأيمن -->
             <div class="footer-section footer-right">
                 <div class="logo-efa">
                     <img src="indexx/EFAAW.svg" alt="شعار الذيل" class="efa-logo" width="160" height="70">
                 </div>
             </div>
 
-            <!-- الخط الفاصل الذي يظهر في الجوال فقط -->
+            <!-- خط فاصل للجوال -->
             <div class="dashed-linee"></div>
 
-            <!-- القسم الأوسط: روابط تذييل الصفحة وأيقونات الدفع -->
+            <!-- القسم الأوسط -->
             <div class="footer-section footer-center">
                 <h3>عنوان التذييل الخاص بك</h3>
                 <ul class="footer-links">
